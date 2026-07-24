@@ -19,3 +19,17 @@ npm run dev
 ```
 
 Requires `SUPABASE_SERVICE_ROLE_KEY` (or anon with SELECT) for `reer_sh_yoonis.profiles`.
+
+## Deploy on Netlify
+
+1. Connect the GitHub repo and leave build command as `npm run build` (see `netlify.toml`).
+2. In **Site settings → Environment variables**, add:
+
+| Variable | Notes |
+|---|---|
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Anon key |
+| `NEXT_PUBLIC_SUPABASE_SCHEMA` | `reer_sh_yoonis` |
+| `SUPABASE_SERVICE_ROLE_KEY` | Service role key (server API) |
+
+3. Redeploy after saving env vars. Do **not** set publish directory to `out` or `dist` — the Next.js plugin handles it.
