@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #1b3a4b;
+  --ink-soft: #f0e6d6;
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--ink-soft);
+  --font-sans: var(--font-body);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  height: 100dvh;
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink-soft);
+  overflow: hidden;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(240, 230, 214, 0.25);
+  border-radius: 999px;
+}
+
+@media (max-width: 768px) {
+  canvas {
+    touch-action: none;
+  }
+}
